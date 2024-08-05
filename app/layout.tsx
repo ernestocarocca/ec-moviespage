@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+import NavbarDemo from "@/components/example/navbar-menu-demo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-black min-h-screen flex flex-col`}>
+  
+        <ShootingStars />
+        <StarsBackground />
+        <main className="">
+    
+          {children}
+        </main>
+      
+      </body>
     </html>
   );
 }
